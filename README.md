@@ -1,1 +1,79 @@
-# FlowBlockchain-with-Cadence
+# Flow Client Library Demo
+
+This project demonstrates how to use FCL in your webapp and interact with Flow and wallet providers.
+You can find an online demo [Here](https://fcl-demo.netlify.app/)
+
+## Getting Started
+
+### Setting up environment
+
+In order for this demo to work, you have to setup the dependencies first:
+
+- **Install Flow CLI** [Here](https://docs.onflow.org/flow-cli/install/)  
+  The Flow CLI is a command-line interface that provides useful utilities for building Flow applications. The tool we need in this demo is _Flow emulator_, a local emulator of Flow blockchain.
+- **Install project dependencies**  
+  Run `yarn` at project root.
+
+### Starting the services
+
+- **Start Flow emulator**  
+  Run `flow emulator start` at project root. Flow CLI uses `./flow.json` as config to start up the local Flow emulator.  
+  The emulator provides a local access node at `http://localhost:8080`
+- **Start FCL dev-wallet**  
+  Run `yarn run dev-wallet` at project root, which starts FCL dev wallet with private key identical to the one defined in `./flow.json`.  
+  The dev wallet is served at `http://localhost:8701`
+- **Start demo webapp**  
+  Run `yarn start` at project root and you will see the demo webapp running at `http://localhost:3000`
+
+## Diving into Demo
+
+All the demo cases are located in `./src/demo`. Each component is responsible for one example interaction with FCL.
+
+- **GetLatestBlock**: Get the information of the latest block produced on Flow blockchain
+- **GetAccount**: Get the account information for any specified account address
+- **ScriptOne**: Executes a simple script (read-only)
+- **ScriptTwo**: Executes a simple script (read-only) but with custom decoder for custom Cadence data structure
+- **Authenticate**: Handles sign in/out logic with FCL wallet
+- **UserInfo**: Subscribes to `fcl.currentUser()` and shows the connected user account information
+- **SendTransaction**: Sends a simple transaction to Flow. This requires the signatures from the connected user
+- **DeployContract**: Deploys a contract to the current user's code storage
+- **InteractWithContract**: Sends a simple transaction that executes a contract method. This requires the signatures from the connected user
+
+## Switch to Testnet
+
+You can also test on Flow testnet instead of local emulator. To do so, simply update the FCL config inside `./src/config.js`:
+
+```
+fcl.config()
+  .put("accessNode.api", "https://access-testnet.onflow.org")
+  .put("challenge.handshake", "https://flow-wallet-testnet.blocto.app/authn")
+```
+
+This will use a testnet access node instead of local emulator, and _Blocto testnet wallet_ instead of local dev-wallet.
+
+## Contact
+
+If you encounter any questions while trying out Flow, please go to [Flow Discord Server](https://discord.gg/SEJtd32), where you can find other developers to help you out.  
+If you have any problem integrating Blocto wallet, you can also check out [Blocto Discord Server](https://discord.gg/Y2sfssn)
+
+## Acknowledgement
+
+- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- A lot of the examples were taken from the tutorial in [FCL](https://github.com/onflow/flow-js-sdk/tree/master/packages/fcl)
+
+
+
+///////////////////////////
+
+https://play.onflow.org/e0b8fca4-e244-4e01-9a6e-3bdb91387984?type=tx&id=d4b27c9f-8a87-43bd-a68d-819dae75e69e&storage=none
+
+Owner address 0x0037ec46aa30a56a
+
+Williem = 0x1dbd87e1268b68e8
+
+Bryce   0x8a1c43fb52172d60
+
+Db contract address 0x3b3a1ed7c2c0a214
+
+
+https://play.onflow.org/2149acc7-aa5e-4c65-b221-de695cc98e59?type=script&id=e72d3f86-0464-4c62-915e-0c4129d85ffb&storage=none
