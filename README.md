@@ -61,19 +61,5 @@ If you have any problem integrating Blocto wallet, you can also check out [Bloct
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 - A lot of the examples were taken from the tutorial in [FCL](https://github.com/onflow/flow-js-sdk/tree/master/packages/fcl)
 
-
-
-///////////////////////////
-
 https://play.onflow.org/e0b8fca4-e244-4e01-9a6e-3bdb91387984?type=tx&id=d4b27c9f-8a87-43bd-a68d-819dae75e69e&storage=none
-
-Owner address 0x0037ec46aa30a56a
-
-Williem = 0x1dbd87e1268b68e8
-
-Bryce   0x8a1c43fb52172d60
-
-Db contract address 0x3b3a1ed7c2c0a214
-
-
 https://play.onflow.org/2149acc7-aa5e-4c65-b221-de695cc98e59?type=script&id=e72d3f86-0464-4c62-915e-0c4129d85ffb&storage=none
