@@ -55,6 +55,7 @@ This will use a testnet access node instead of local emulator, and _Blocto testn
 
 If you encounter any questions while trying out Flow, please go to [Flow Discord Server](https://discord.gg/SEJtd32), where you can find other developers to help you out.  
 If you have any problem integrating Blocto wallet, you can also check out [Blocto Discord Server](https://discord.gg/Y2sfssn)
+Please contact us.
 
 ## Acknowledgement
 
